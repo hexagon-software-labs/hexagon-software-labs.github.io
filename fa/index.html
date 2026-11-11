@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>هگزاگون | نرم‌افزار ابری برای مدیریت کسب‌وکار</title>
-<meta name="description" content="هگزاگون نرم‌افزارهای ابری خود را طراحی، میزبانی و پشتیبانی می‌کند. کافه‌بان، نخستین محصول ما، سفارش‌گیری، پرداخت و صورتحساب مالیاتی کافه‌ها و رستوران‌های ایران را یکجا انجام می‌دهد.">
+<title>هگزاگون | طراحی، ساخت و اجرای نرم‌افزار</title>
+<meta name="description" content="هگزاگون نرم‌افزارهای وب، موبایل و ابری را برای کسب‌وکارها طراحی می‌کند، می‌سازد و اجرا می‌کند؛ به فارسی و انگلیسی.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="هگزاگون | نرم‌افزار ابری برای مدیریت کسب‌وکار">
-<meta property="og:description" content="کافه‌بان، نخستین محصول هگزاگون، سفارش‌گیری، پرداخت و صورتحساب مالیاتی کافه‌ها و رستوران‌های ایران را یکجا انجام می‌دهد.">
+<meta property="og:title" content="هگزاگون | طراحی، ساخت و اجرای نرم‌افزار">
+<meta property="og:description" content="اپلیکیشن وب و موبایل، سرویس ابری و اتصال به سامانه‌ها؛ از اولین طرح تا راه‌اندازی روی سرور.">
 <meta property="og:url" content="https://hexagon-software.com/fa/">
 <meta property="og:image" content="https://hexagon-software.com/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,201 +21,34 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js','mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="stylesheet" href="../assets/system.css">
-<link rel="stylesheet" href="../assets/ui/cards.css">
 <link rel="stylesheet" href="../assets/motion/motion.css">
 <link rel="stylesheet" href="../assets/backgrounds/backgrounds.css">
-<link rel="stylesheet" href="../assets/layout/layout.css">
 <link rel="stylesheet" href="../assets/icons/icon.css">
+<link rel="stylesheet" href="../assets/diagrams/diagram.css">
+<link rel="stylesheet" href="../assets/site.css">
 <style>
 :root {
-  /* violet, from the logo (#7C3AED): darker steps carry text and buttons so they read at 7:1 */
-  --p-bg: #f9f8fc; --p-surface: #f0ecf9; --p-ink: #1f1633; --p-muted: #4e4466;
-  --p-accent: #6d28d9; --p-accent-ink: #ffffff; --p-action: #5b21b6; --p-action-ink: #ffffff;
-  --p-inv-bg: #1f1633; --p-inv-surface: #2d2247; --p-inv-ink: #f9f8fc; --p-inv-muted: #cbc3dd;
-  --p-inv-accent: #c4b5fd; --p-inv-accent-ink: #1f1633; --p-inv-action: #f9f8fc; --p-inv-action-ink: #1f1633;
-  /* Persian: Vazirmatn in place of Instrument Sans (no Persian glyphs); no negative tracking on Persian script */
+  /* Persian: Vazirmatn (Instrument Sans has no Persian glyphs), no negative tracking on Persian script */
   --font-display: "Vazirmatn", system-ui, sans-serif;
   --font-text: "Vazirmatn", system-ui, sans-serif;
   --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --display-weight: 500;
-  --display-tracking: 0;
-  --display-tracking-xl: 0;
-  --display-stretch: 100%;
-  --ly-scale: 1;
+  --display-weight: 500; --display-tracking: 0; --display-tracking-xl: 0; --display-stretch: 100%;
 }
 </style>
-<link rel="stylesheet" href="../assets/ui/base.css">
-<link rel="stylesheet" href="../assets/ui/window/fragment.css">
-<link rel="stylesheet" href="../assets/ui/checklist/fragment.css">
-<link rel="stylesheet" href="../assets/diagrams/diagram.css">
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 <script src="../assets/backgrounds/backgrounds.js"></script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="../assets/moments/moments.js">
-<link rel="modulepreload" href="../assets/moments/lib.js">
-<link rel="modulepreload" href="../assets/moments/word-highlight/moment.js">
-<link rel="stylesheet" href="../assets/moments/word-highlight/moment.css">
-<style>
-  /* right to left: the kit is written left to right, so the few physical sides it sets are turned here */
-  [dir="rtl"] body { letter-spacing: 0; }
-  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] .mo-wh__text { letter-spacing: 0; line-height: 1.35; }
-  [dir="rtl"] .m-arrow, [dir="rtl"] .link::after { transform: scaleX(-1); }
-  [dir="rtl"] .ui, [dir="rtl"] .dg { direction: rtl; }
-  .nav__logo img { width: 28px; height: 28px; }
-  .ly-collage { container-type: inline-size; }
-  .ly-collage .ly-piece { box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 22px 48px -22px rgb(40 20 80 / .35); background: #fff; color: #15171a; font: 400 max(13px, 2cqw)/1.5 var(--font-text); }
-  .pc { padding: 3.2cqw 3.6cqw; display: grid; gap: 1.6cqw; align-content: start; }
-  .pc .lbl, .pc-phone .lbl { color: #5d6670; font-size: max(13px, 1.8cqw); }
-  .pc b { font-weight: 500; }
-  .pc .ln, .pc-phone .ln { display: flex; justify-content: space-between; gap: 2cqw; padding-top: 1.4cqw; border-top: 1px solid #e6e9ec; }
-  .pc .ln em, .pc-phone .ln em { font-style: normal; color: #5d6670; }
-  .pc .ok { color: #1f7a4d; font-weight: 500; }
-  .pc .big { font: 500 4.6cqw/1.2 var(--font-display); }
-  .pc-ticket { background: #fffdf7; }
-  .pc-ticket .cut { border-top: 1px dashed #b9bcc0; }
-  .pc-phone { background: #15171a !important; border-radius: 4.6cqw; padding: 1.4cqw; }
-  .pc-phone > div { width: 100%; height: 100%; border-radius: 3.4cqw; overflow: hidden; background: #fff; padding: 3cqw 3cqw 9cqw; display: grid; gap: 1.6cqw; align-content: start; }
-  .pc-phone h4 { margin: 0; font: 500 3.6cqw/1.3 var(--font-display); }
-  .pc-phone .add { justify-self: start; background: #5b21b6; color: #fff; border-radius: 99px; padding: .8cqw 2.4cqw; font-size: max(13px, 1.8cqw); }
-  .pc-sms { background: #f1edf9; }
-  @media (max-width: 639px) { .pc .ln:nth-of-type(n+4), .pc-phone .ln:nth-of-type(n+4), .pc-phone .ln em { display: none; } }
-  .app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
-  .app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
-  .app > .app__pane + .app__pane { border-inline-start: 1px solid var(--u-line); }
-  .app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
-  .app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
-  .app__pane--open { padding: var(--s-6); }
-  .app__pane--open > .ui-checks { max-width: 520px; }
-  @media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
-  @media (max-width: 1023px) {
-    .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
-    .app > .app__pane--list { max-height: 252px; }
-    .app > .app__pane--list::after { display: none; }
-    .app .ui-win__side { display: none; }
-    .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
-    .app > .app__pane + .app__pane { border-inline-start: 0; border-top: 1px solid var(--u-line); }
-  }
-  @media (max-width: 639px) {
-    .app.ui { grid-template-rows: minmax(0, 1fr); }
-    .app > .app__pane--list { display: none; }
-    .app > .app__pane + .app__pane { border-top: 0; }
-    .app__pane--open { padding: var(--s-4); }
-  }
-  /* hero: text and buttons together on the left, the collage on the right (no lone button column) */
-  @media (min-width: 1024px) {
-    .hero--triptych .hero__grid { grid-template-rows: 1fr; }
-    .hero--triptych .hero__grid > :first-child { grid-column: 1 / span 5; grid-row: 1; align-self: center; }
-    .hero--triptych .ly-collage { grid-column: 7 / span 6; grid-row: 1; }
-  }
-  .hero--triptych .hero__lead { max-width: 40ch; }
-  .hero .btn-row { margin-top: var(--s-6); }
-  .hero__proof { margin-top: var(--s-5); display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); color: var(--muted); font-size: var(--t-small, 15px); list-style: none; padding: 0; }
-  .hero__proof li { display: flex; align-items: center; gap: 6px; }
-  .hero__proof svg { width: 16px; height: 16px; flex: none; }
-  /* what we do: four cards, each with its own icon */
-  #what .card { padding: var(--s-6); min-height: 220px; }
-  #what .card > p { max-width: 44ch; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: var(--s-4); list-style: none; padding-inline: 0; margin-bottom: 0; }
-  .tags li { font-size: 14px; padding: 4px 12px; border-radius: 99px; background: var(--p-bg); border: 1px solid var(--line); color: var(--muted); }
-  .card__ic { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--p-surface); color: var(--p-ink); margin-bottom: var(--s-3); }
-  .card__ic svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-  #what .card { transition: transform .2s ease, box-shadow .2s ease; }
-  #what .card:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -24px rgb(40 20 80 / .35); }
-  /* product points */
-  .points { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4) var(--s-6); }
-  .points li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; }
-  .points svg { width: 20px; height: 20px; margin-top: 3px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .points b { display: block; font-weight: 500; }
-  .points span { color: var(--muted); }
-  @media (max-width: 639px) { .points { grid-template-columns: 1fr; } }
-  .ui-check.is-done .ui-check__label::after { display: none; }
-  /* offline steps */
-  #offline .stack-5 { align-self: center; }
-  .steps { list-style: none; padding: 0; margin: var(--s-6) 0 0; display: grid; gap: var(--s-4); counter-reset: st; }
-  .steps li { display: grid; grid-template-columns: 32px 1fr; gap: var(--s-3); counter-increment: st; }
-  .steps li::before { content: counter(st); width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; border: 1px solid color-mix(in oklab, currentColor 40%, transparent); font-size: 15px; }
-  .steps b { display: block; font-weight: 500; }
-  /* contact */
-  .contact { display: grid; gap: var(--s-6); }
-  .contact__mail { font: 500 clamp(22px, 5.6vw, 56px)/1.15 var(--font-display); letter-spacing: -0.02em; color: var(--ink); text-decoration: none; overflow-wrap: normal; }
-  .contact__mail:hover { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
-  .contact__facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); margin: 0; padding-top: var(--s-5); border-top: 1px solid var(--line); }
-  .contact__facts dt { color: var(--muted); font-size: 15px; }
-  .contact__facts dd { margin: 4px 0 0; font-weight: 500; }
-  @media (max-width: 639px) { .contact__facts { grid-template-columns: 1fr; } }
-  /* the diagram flows right to left: mirror the drawing, keep each node's words readable */
-  [dir="rtl"] .dg { direction: ltr; transform: scaleX(-1); }
-  [dir="rtl"] .dg-node > * { transform: scaleX(-1); }
-  [dir="rtl"] .points li, [dir="rtl"] .steps li { text-align: start; }
-  /* language switch: two flags in a pill, the thumb slides to the other side before the page changes */
-  .lang { --dir: 1; position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; padding: 3px; border-radius: 99px; background: var(--p-surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font: 500 14px/1 var(--font-text); isolation: isolate; }
-  [dir="rtl"] .lang { --dir: -1; }
-  .lang__opt { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 7px; padding: 7px 12px; border-radius: 99px; color: var(--muted); transition: color .3s ease; font-family: system-ui, sans-serif; }
-  .lang__opt svg { width: 21px; height: 14px; border-radius: 3px; box-shadow: 0 0 0 1px rgb(0 0 0 / .12); transition: transform .35s cubic-bezier(.3,.7,.2,1); }
-  .lang__thumb { position: absolute; z-index: 0; top: 3px; bottom: 3px; inset-inline-start: 3px; width: calc(50% - 3px); border-radius: 99px; background: var(--p-bg); box-shadow: 0 1px 3px rgb(0 0 0 / .14), 0 4px 10px -4px rgb(40 20 80 / .25); transition: transform .38s cubic-bezier(.3,.7,.2,1); }
-  .lang[data-cur="2"] .lang__thumb, .lang.is-going[data-cur="1"] .lang__thumb { transform: translateX(calc(var(--dir) * 100%)); }
-  .lang.is-going[data-cur="2"] .lang__thumb { transform: none; }
-  .lang:not(.is-going)[data-cur="1"] .lang__opt:first-of-type, .lang:not(.is-going)[data-cur="2"] .lang__opt:nth-of-type(2),
-  .lang.is-going[data-cur="1"] .lang__opt:nth-of-type(2), .lang.is-going[data-cur="2"] .lang__opt:first-of-type { color: var(--ink); }
-  .lang:hover .lang__opt svg { transform: scale(1.08); }
-  .lang:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce) { .lang__thumb, .lang__opt svg { transition: none; } }
-  /* phone and tablet: the flags stay in the bar; on a phone they replace the button (it is in the menu sheet and the hero) */
-  @media (max-width: 1023px) {
-    .nav:not(.is-open) .nav__actions > .lang { display: inline-grid; }
-    .nav.is-open .nav__actions > .lang { justify-self: center; }
-    [dir="rtl"] .nav:not(.is-open) .nav__actions { margin-left: 0; margin-right: auto; }
-  }
-  @media (max-width: 639px) {
-    .nav:not(.is-open) .nav__actions > .btn--primary { display: none; }
-    .nav:not(.is-open) .lang__opt { font-size: 0; gap: 0; padding: 8px 10px; }
-  }
-  [dir="rtl"] .steps li::before { content: counter(st, persian); }
-  [dir="rtl"] .contact__mail { text-align: right; }
-  /* gate fixes: readable card text, hanging icons on the split line, top-aligned splits, a phone hero inside one screen */
-  #what .card > p { color: var(--ink); }
-  .contact__facts { border-top: 0; padding-top: 0; }
-  .contact__facts dt { display: flex; align-items: center; gap: 8px; }
-  .contact__facts dt svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-  .points li { position: relative; display: block; }
-  .points li > svg { position: absolute; inset-inline-start: -30px; top: 0; }
-  .steps li { grid-template-columns: 1fr; gap: var(--s-2); }
-  @media (min-width: 1024px) { .hero--triptych .hero__grid > :first-child { align-self: center; } .hero--triptych .ly-collage { align-self: stretch; } }
-  #offline .stack-5 { align-self: start; }
-  @media (max-width: 639px) { .hero__proof, .pc-phone .add { display: none; } .ly-collage { min-height: 260px; } .points li > svg { position: static; float: inline-start; margin-inline-end: 10px; } }
-  /* violet accents: icons, ticks and step numbers take the logo's colour */
-  .card__ic { background: #ede7fb; color: var(--p-accent); }
-  .hero__proof svg, .points svg { color: var(--p-accent); }
-  .tags li { background: #f5f2fc; }
-  .ground-inverse .steps li::before { border-color: #a78bfa; color: #ddd6fe; }
-  .contact__mail { color: var(--p-action); }
-</style>
 </head>
 <body>
-<!-- the Persian page: the English page (../index.html) in Persian, right to left, the same deal and sections -->
-
 <header class="nav">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top">پرش به محتوا</a>
     <a class="nav__logo" href="#top"><img src="../brand/hexagon-mark.svg" alt="" width="28" height="28">هگزاگون</a>
     <nav class="nav__links" aria-label="منوی اصلی">
-      <div class="nav__item"><a class="nav__link" href="#what">خدمات ما</a></div>
-      <div class="nav__item">
-        <a class="nav__link" href="#kafeban">کافه‌بان <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu">
-          <div class="wrap grid">
-            <div class="menu-col span-3">
-              <p class="t-label">کافه‌بان</p>
-              <a href="#kafeban">سالن و سفارش‌ها<span>وضعیت همهٔ میزها در یک نگاه</span></a>
-              <a href="#offline">فروش بدون اینترنت<span>با قطع اینترنت، فروش متوقف نمی‌شود</span></a>
-              <a href="https://kafeban.ir">kafeban.ir<span>وب‌سایت کافه‌بان</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="nav__item"><a class="nav__link" href="#services">خدمات</a></div>
+      <div class="nav__item"><a class="nav__link" href="#process">روش کار</a></div>
+      <div class="nav__item"><a class="nav__link" href="#product">کافه‌بان</a></div>
       <div class="nav__item"><a class="nav__link" href="#questions">پرسش‌های متداول</a></div>
-      <div class="nav__item"><a class="nav__link" href="#contact">تماس با ما</a></div>
     </nav>
     <div class="nav__actions">
       <a class="lang" href="../" hreflang="en" lang="en" data-cur="2" aria-label="English version"><span class="lang__thumb" aria-hidden="true"></span><span class="lang__opt"><svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="flag-gb"><path d="M0 0h60v30H0z"/></clipPath><g clip-path="url(#flag-gb)"><path d="M0 0h60v30H0z" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" stroke="#c8102e" stroke-width="2.5"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/></g></svg>EN</span><span class="lang__opt"><svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#239f40" d="M0 0h3v.67H0z"/><path fill="#fff" d="M0 .67h3v.66H0z"/><path fill="#da0000" d="M0 1.33h3V2H0z"/></svg>FA</span></a>
@@ -228,284 +61,236 @@
 </header>
 
 <main id="top">
-  <section class="hero hero--triptych" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text grid hero__grid">
-      <div class="span-5">
-        <h1 id="hero-h">نرم‌افزار ابری برای مدیریت کسب‌وکار</h1>
-        <p class="hero__lead">هگزاگون محصولات نرم‌افزاری خود را طراحی، میزبانی و پشتیبانی می‌کند. نخستین محصول ما، کافه‌بان، سفارش‌گیری، پرداخت و صورتحساب مالیاتی کافه‌ها و رستوران‌های ایران را یکجا انجام می‌دهد.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="#contact">تماس با ما<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-          <a class="btn btn--secondary" href="#kafeban">آشنایی با کافه‌بان</a>
+  <section class="hx-hero" aria-labelledby="hero-h">
+    <div class="wrap"><div class="hx-hero__grid">
+      <div class="hx-hero__text">
+        <span class="eyebrow" data-rise><i aria-hidden="true"></i>استودیوی نرم‌افزار · فارسی و انگلیسی</span>
+        <h1 id="hero-h" data-rise>نرم‌افزار کسب‌وکارتان را از ایده تا <em>اجرا</em> می‌سازیم</h1>
+        <p class="hx-hero__lead" data-rise>اپلیکیشن وب و موبایل، سرویس‌های ابری و اتصال به سامانه‌هایی که کسب‌وکارتان لازم دارد. یک تیم، از اولین طرح تا راه‌اندازی روی سرور، همراه شماست.</p>
+        <div class="btn-row" data-rise>
+          <a class="btn btn--primary" href="#contact">شروع پروژه<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <a class="btn btn--secondary" href="#services">خدمات ما</a>
         </div>
-        <ul class="hero__proof">
-          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>میزبانی ابری</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>کار بدون اینترنت</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>پشتیبانی مستقیم</li>
+        <ul class="hx-proof" data-rise>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>وب و موبایل</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>ابری و آفلاین</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>فارسی و انگلیسی</li>
         </ul>
       </div>
-      <div class="ly-collage span-6 start-7" role="img" aria-label="کافه‌بان در کار: منوی QR روی گوشی مهمان، فیش آشپزخانه، صورتحساب تقسیم‌شده، صورتحساب پذیرفته‌شده در سامانهٔ مؤدیان و گزارش شبانهٔ صاحب کافه">
-        <div class="ly-collage__set is-on">
-          <div class="ly-piece pc-phone" style="right: 4%; top: 6%; width: 34%; height: 60%"><div>
-            <span class="lbl">میز ۷ · منو</span>
-            <h4>نوشیدنی گرم</h4>
-            <div class="ln"><span>فلت وایت</span><em>۹۵٬۰۰۰</em></div>
-            <div class="ln"><span>لاته زعفرانی</span><em>۱۲۰٬۰۰۰</em></div>
-            <div class="ln"><span>چای ماسالا</span><em>۸۵٬۰۰۰</em></div>
-            <div class="ln"><span>قهوهٔ ترک</span><em>۹۰٬۰۰۰</em></div>
-            <div class="ln"><span>هات چاکلت</span><em>۱۱۰٬۰۰۰</em></div>
-            <span class="add">افزودن به سفارش</span>
-          </div></div>
-          <div class="ly-piece pc pc-ticket" style="right: 44%; top: 10%; width: 40%">
-            <span class="lbl">آشپزخانه · ۱۹:۴۲</span>
-            <b>میز ۷ · سفارش ۱۰۴۲</b>
-            <div class="ln cut"><span>۲ × فلت وایت</span></div>
-            <div class="ln"><span>۱ × لاته زعفرانی</span></div>
-            <div class="ln"><span>۱ × کیک خرما</span><em>بدون گردو</em></div>
+      <div class="hx-stage" aria-hidden="true">
+        <div class="hx-world">
+          <div class="hx-floor"></div>
+          <div class="hx-shadow"></div>
+          <div class="hx-orbit"></div>
+          <div class="hx-float">
+            <div class="hx">
+              <div class="hx__face hx__front"><svg viewBox="6 13.23 108 93.54"><defs><linearGradient id="hxg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b2a66"/><stop offset=".55" stop-color="#1c1630"/><stop offset="1" stop-color="#15171a"/></linearGradient></defs><path d="M6 60 33 13.23h54L114 60 87 106.77H33z" fill="url(#hxg)"/><path d="M60 60h54l-27 46.77H33z" fill="#2b2e34" opacity=".55"/><path d="M6 60 33 13.23h54L114 60 87 106.77H33z" fill="none" stroke="#a78bfa" stroke-opacity=".55" stroke-width=".8"/><polyline points="40,34.02 55,60 40,85.98" fill="none" stroke="#f9f8fc" stroke-width="13"/><rect x="60" y="76.23" width="26" height="13" fill="#7c3aed"/></svg></div>
+              <div class="hx__face hx__back"><svg viewBox="6 13.23 108 93.54"><path d="M6 60 33 13.23h54L114 60 87 106.77H33z" fill="#1c1630"/></svg></div>
+              <div class="hx__side" style="--k:0;--b:1.3"></div>
+              <div class="hx__side" style="--k:1;--b:1"></div>
+              <div class="hx__side" style="--k:2;--b:.72"></div>
+              <div class="hx__side" style="--k:3;--b:.55"></div>
+              <div class="hx__side" style="--k:4;--b:.72"></div>
+              <div class="hx__side" style="--k:5;--b:1"></div>
+            </div>
           </div>
-          <div class="ly-piece pc" style="right: 30%; top: 66%; width: 44%">
-            <span class="lbl">میز ۷</span>
-            <div class="ln"><span>وضعیت</span><span class="ok">در آشپزخانه</span></div>
-            <div class="ln"><span>ثبت‌شده از</span><em>منوی QR</em></div>
-          </div>
-        </div>
-        <div class="ly-collage__set" aria-hidden="true">
-          <div class="ly-piece pc" style="right: 4%; top: 8%; width: 50%">
-            <span class="lbl">صورتحساب · میز ۴</span>
-            <span class="big">۶۸۵٬۰۰۰ تومان</span>
-            <div class="ln"><span>نقد</span><em>۲۰۰٬۰۰۰</em></div>
-            <div class="ln"><span>کارت</span><em>۲۸۵٬۰۰۰</em></div>
-            <div class="ln"><span>آنلاین</span><em>۲۰۰٬۰۰۰</em></div>
-          </div>
-          <div class="ly-piece pc" style="right: 46%; top: 50%; width: 50%">
-            <span class="lbl">صورتحساب ۱۳۸۸ · مؤدیان</span>
-            <div class="ln"><span>زمان ارسال</span><em>۲۰:۰۵</em></div>
-            <div class="ln"><span>وضعیت</span><span class="ok">پذیرفته شد</span></div>
-          </div>
-        </div>
-        <div class="ly-collage__set" aria-hidden="true">
-          <div class="ly-piece pc pc-sms" style="right: 4%; top: 8%; width: 52%">
-            <span class="lbl">پیامک · ۲۳:۳۰</span>
-            <span>کافه‌بان | گزارش امروز: ۱۴۲ سفارش، فروش ۴۸٬۶۰۰٬۰۰۰ تومان، ۳ ابطال با تأیید مدیر.</span>
-          </div>
-          <div class="ly-piece pc" style="right: 40%; top: 46%; width: 56%">
-            <span class="lbl">بستن شیفت · صندوق ۱</span>
-            <div class="ln"><span>نقد در صندوق</span><em>۹٬۴۵۰٬۰۰۰</em></div>
-            <div class="ln"><span>کارت</span><em>۲۱٬۳۰۰٬۰۰۰</em></div>
-            <div class="ln"><span>اختلاف</span><span class="ok">۰</span></div>
-          </div>
+          <span class="hx-chip" style="--x:240px;--y:-160px;--z:70px"><span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>اپ وب</span></span>
+          <span class="hx-chip" style="--x:-230px;--y:-170px;--z:-40px;--d:-1.2s"><span><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg>موبایل</span></span>
+          <span class="hx-chip" style="--x:-265px;--y:35px;--z:90px;--d:-2.4s"><span><svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 1 1 .9-8.9A6 6 0 0 1 19.5 11 3.5 3.5 0 0 1 18 18z"/></svg>ابر</span></span>
+          <span class="hx-chip is-far" style="--x:275px;--y:40px;--z:-70px;--d:-3.1s"><span><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>API</span></span>
+          <span class="hx-chip" style="--x:180px;--y:195px;--z:40px;--d:-.6s"><span><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>همگام‌سازی آفلاین</span></span>
+          <span class="hx-chip is-far" style="--x:-190px;--y:190px;--z:-20px;--d:-3.8s"><span><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19"/></svg>پرداخت</span></span>
         </div>
       </div>
     </div></div>
   </section>
 
-  <section class="section" id="what" aria-labelledby="what-h">
+  <section class="section" id="services" aria-labelledby="services-h">
     <div class="wrap">
-      <div class="grid grid--top">
-        <h2 id="what-h" class="span-6">خدمات هگزاگون به کسب‌وکارها</h2>
-        <p class="span-6 start-7">کارهای روزمرهٔ کسب‌وکار، مثل سفارش‌گیری، بستن صندوق و صدور صورتحساب مالیاتی را به نرم‌افزاری تبدیل می‌کنیم که از ابتدا تا انتها انجامشان می‌دهد.</p>
+      <div class="sec-head">
+        <p class="t-label" data-rise>خدمات</p>
+        <h2 id="services-h" data-rise>چه چیزهایی می‌سازیم</h2>
+        <p data-rise>یک تیم ایدهٔ شما را تا محصول نهایی پیش می‌برد و بعد از آن هم پشتیبانش است.</p>
       </div>
-      <div class="grid grid--top" style="margin-top: var(--s-7)">
-        <article class="card span-6">
-          <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
-          <h3>طراحی و ساخت محصول</h3>
-          <p>نرم‌افزارهایمان را خودمان طراحی می‌کنیم و می‌نویسیم؛ از پایگاه داده تا صفحه‌ای که کارکنان شما با آن کار می‌کنند.</p>
-          <ul class="tags"><li>وب</li><li>اندروید</li><li>کار بدون اینترنت</li></ul>
+      <div class="svc">
+        <article class="svc__card" data-tilt data-rise>
+          <span class="svc__ic" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 8h6"/></svg></span>
+          <h3>اپلیکیشن تحت وب</h3>
+          <p>داشبورد، پنل مدیریت و پرتال مشتری؛ سریع و سازگار با هر صفحه‌نمایش.</p>
+          <ul class="tags"><li>React</li><li>Next.js</li><li>PWA</li></ul>
         </article>
-        <article class="card span-6">
-          <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 1 1 .9-8.9A6 6 0 0 1 19.5 11 3.5 3.5 0 0 1 18 18z"/></svg></span>
-          <h3>میزبانی و نگهداری</h3>
-          <p>هر محصول را نزدیک به مشتریانش میزبانی می‌کنیم و هر روز از اطلاعات نسخهٔ پشتیبان رمزگذاری‌شده تهیه می‌شود. کافه‌بان روی سرورهای داخل ایران اجرا می‌شود.</p>
-          <ul class="tags"><li>نزدیک به مشتری</li><li>پشتیبان‌گیری روزانه</li></ul>
+        <article class="svc__card" data-tilt data-rise>
+          <span class="svc__ic" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg></span>
+          <h3>اپلیکیشن موبایل</h3>
+          <p>اپ برای کارکنان و مشتریان که روی اندروید نصب می‌شود و با اینترنت ضعیف هم کار می‌کند.</p>
+          <ul class="tags"><li>اندروید</li><li>PWA</li><li>آفلاین</li></ul>
         </article>
-        <article class="card span-6">
-          <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/></svg></span>
-          <h3>اتصال به سرویس‌های هر بازار</h3>
-          <p>سامانه‌های مالیاتی، درگاه پرداخت، پیامک و چاپگر فیش؛ برای کافه‌بان، از جمله سامانهٔ مؤدیان.</p>
-          <ul class="tags"><li>سامانهٔ مالیاتی</li><li>درگاه پرداخت</li><li>پیامک</li><li>چاپگر</li></ul>
+        <article class="svc__card" data-tilt data-rise>
+          <span class="svc__ic" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v13c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-13M4.5 12c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/></svg></span>
+          <h3>سرویس ابری و API</h3>
+          <p>سرویس‌هایی برای تعداد زیادی مشتری، با API شفاف، به‌روزرسانی لحظه‌ای و پایگاه دادهٔ قابل اعتماد.</p>
+          <ul class="tags"><li>NestJS</li><li>Go</li><li>PostgreSQL</li></ul>
         </article>
-        <article class="card span-6">
-          <span class="card__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
-          <h3>راه‌اندازی و پشتیبانی</h3>
-          <p>منو یا فهرست قیمت شما را از فایل اکسل وارد می‌کنیم و به فارسی و انگلیسی پاسخگوی شما هستیم.</p>
-          <ul class="tags"><li>ورود اطلاعات از اکسل</li><li>آموزش کارکنان</li><li>پشتیبانی فارسی و انگلیسی</li></ul>
+        <article class="svc__card" data-tilt data-rise>
+          <span class="svc__ic" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 17h.01M11 17h.01M8 10a5.5 5.5 0 0 1 8 0M5.5 7a9 9 0 0 1 13 0"/></svg></span>
+          <h3>سیستم‌های آفلاین</h3>
+          <p>با قطع اینترنت، یک هاب کوچک در محل، کسب‌وکار را سرپا نگه می‌دارد و بعد همه‌چیز را همگام می‌کند.</p>
+          <ul class="tags"><li>هاب محلی</li><li>همگام‌سازی</li><li>شبکهٔ داخلی</li></ul>
+        </article>
+        <article class="svc__card" data-tilt data-rise>
+          <span class="svc__ic" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/><path d="M12 16v4M9 20h6"/></svg></span>
+          <h3>اتصال به سامانه‌ها</h3>
+          <p>درگاه پرداخت، سامانهٔ مالیاتی، پیامک و چاپگر فیش؛ هرکدام با یک رابط مستقل و تمیز.</p>
+          <ul class="tags"><li>پرداخت</li><li>مالیات</li><li>پیامک</li><li>چاپگر</li></ul>
+        </article>
+        <article class="svc__card" data-tilt data-rise>
+          <span class="svc__ic" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.7 1.5-1.5 0-.9-.7-1.2-.7-2s.6-1.5 1.5-1.5H17a4 4 0 0 0 4-4c0-5-4-9-9-9z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></span>
+          <h3>طراحی محصول</h3>
+          <p>همهٔ صفحه‌ها پیش از کدنویسی طراحی و آزموده می‌شوند؛ راست‌به‌چپ و فارسی، هرجا کاربرانتان نیاز داشته باشند.</p>
+          <ul class="tags"><li>طراحی رابط و تجربهٔ کاربری</li><li>راست‌به‌چپ</li><li>سیستم طراحی</li></ul>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section" id="kafeban" aria-labelledby="kafeban-h">
-    <div class="wrap">
-      <div class="grid grid--top">
-        <div class="span-5 stack-4">
-          <p class="t-label">نخستین محصول ما</p>
-          <h2 id="kafeban-h">کافه‌بان؛ از ثبت سفارش تا صدور صورتحساب</h2>
-          <a class="link" href="https://kafeban.ir">مشاهدهٔ وب‌سایت کافه‌بان</a>
-        </div>
-        <ul class="points span-6 start-7">
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4.5 10.4 3.3 3.3 7.7-8"/></svg><div><b>ثبت سفارش از سه مسیر</b><span>منوی QR، اپ گارسون و صندوق</span></div></li>
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4.5 10.4 3.3 3.3 7.7-8"/></svg><div><b>ارسال فیش به آشپزخانه</b><span>با اضافه شدن سفارش، فقط آیتم‌های جدید چاپ می‌شوند</span></div></li>
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4.5 10.4 3.3 3.3 7.7-8"/></svg><div><b>تقسیم صورتحساب</b><span>پرداخت نقدی، کارتی و آنلاین در یک صورتحساب</span></div></li>
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4.5 10.4 3.3 3.3 7.7-8"/></svg><div><b>صورتحساب مالیاتی</b><span>ارسال خودکار به سامانهٔ مؤدیان</span></div></li>
+  <section class="section ground-inverse" id="engineering" aria-labelledby="eng-h">
+    <div class="wrap"><div class="eng">
+      <div>
+        <p class="t-label" data-rise>مهندسی</p>
+        <h2 id="eng-h" data-rise>ساخته‌شده برای کار بی‌وقفه</h2>
+        <ul class="principles">
+          <li data-rise><span class="pi" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><div><b>اول آفلاین</b><span>دستگاه‌ها روی شبکهٔ داخلی به کار ادامه می‌دهند و با وصل شدن اینترنت همگام می‌شوند.</span></div></li>
+          <li data-rise><span class="pi" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span><div><b>حساب دقیق مالی</b><span>مبالغ با عدد صحیح ثبت می‌شوند و مانده‌ها از دفترهایی به دست می‌آیند که هیچ‌وقت ویرایش نمی‌شوند.</span></div></li>
+          <li data-rise><span class="pi" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><path d="M12 3 4.5 6v6c0 4.5 3.2 7.8 7.5 9 4.3-1.2 7.5-4.5 7.5-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>امنیت از پایه</b><span>دادهٔ هر مشتری جدا نگه داشته می‌شود، هر تغییر ثبت می‌شود و هر روز نسخهٔ پشتیبان رمزگذاری‌شده گرفته می‌شود.</span></div></li>
+          <li data-rise><span class="pi" aria-hidden="true"><svg class="ic-line" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><b>نزدیک به کاربران</b><span>نرم‌افزار روی سرورهایی نزدیک به کاربرانش اجرا می‌شود؛ برای کاربران ایران، روی سرورهای داخل ایران.</span></div></li>
         </ul>
       </div>
-      <div class="ui app fill" role="img" aria-label="نمای سالن در کافه‌بان: فهرست میزها با سفارش و وضعیت هرکدام، و جزئیات سفارش میز ۷" data-ui-pause-host>
-        <div class="app__pane app__pane--list">
-          <div class="ui ui-panel ui-win" data-ui="window" data-open="جدید" data-work="در آشپزخانه" data-done="سرو شد">
-            <div class="ui-win__bar">
-              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="ui-win__crumb">کافه‌بان <i>/</i> <b>سالن</b></span>
-              <span class="ui-spacer"></span>
-              <span class="ui-win__search" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span class="ui-win__ph">جستجو</span><span class="ui-kbd">/</span></span>
-            </div>
-            <div class="ui-win__body">
-              <nav class="ui-win__side" aria-hidden="true">
-                <span class="ui-win__nav is-on"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 9h3l1 1.5h3l1-1.5h3"/><path d="M2.5 9 4 3.5h8L13.5 9v3.5h-11z"/></svg>باز<em>۹</em></span>
-                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3l2 1.5"/></svg>آشپزخانه<em>۴</em></span>
-                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>پرداخت‌شده</span>
-                <span class="ui-win__label">سالن‌ها</span>
-                <span class="ui-win__nav"><span class="ui-win__hash">#</span>حیاط</span>
-                <span class="ui-win__nav"><span class="ui-win__hash">#</span>طبقهٔ بالا</span>
-              </nav>
-              <div class="ui-win__main">
-                <div class="ui-win__cols" aria-hidden="true"><span>میز</span><span>سفارش</span><span>وضعیت</span><span>زمان</span></div>
-                <ul class="ui-win__rows">
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">۷</span><span class="ui-win__who">میز ۷</span><span class="ui-win__sub">۲ فلت وایت، کیک خرما</span><span class="ui-win__st" data-st>جدید</span><span class="ui-win__age">۱ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">۲</span><span class="ui-win__who">میز ۲</span><span class="ui-win__sub">املت، ۲ چای</span><span class="ui-win__st" data-st>جدید</span><span class="ui-win__age">۳ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">۱۱</span><span class="ui-win__who">میز ۱۱</span><span class="ui-win__sub">لاته زعفرانی</span><span class="ui-win__st" data-st>جدید</span><span class="ui-win__age">۵ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">۴</span><span class="ui-win__who">میز ۴</span><span class="ui-win__sub">درخواست صورتحساب، تقسیم بین ۳ نفر</span><span class="ui-win__st is-you" data-st>منتظر پرداخت</span><span class="ui-win__age">۹ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">ص</span><span class="ui-win__who">صندوق ۱</span><span class="ui-win__sub">بیرون‌بر، ۳ اسپرسو</span><span class="ui-win__st is-done" data-st>سرو شد</span><span class="ui-win__age">۱۲ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">۹</span><span class="ui-win__who">میز ۹</span><span class="ui-win__sub">کلاب ساندویچ، لیموناد</span><span class="ui-win__st is-done" data-st>سرو شد</span><span class="ui-win__age">۱۶ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">۳</span><span class="ui-win__who">میز ۳</span><span class="ui-win__sub">۲ چیزکیک</span><span class="ui-win__st is-done" data-st>سرو شد</span><span class="ui-win__age">۲۱ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">۵</span><span class="ui-win__who">میز ۵</span><span class="ui-win__sub">صبحانهٔ دونفره</span><span class="ui-win__st is-done" data-st>سرو شد</span><span class="ui-win__age">۲۶ دقیقه</span></li>
-                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">۸</span><span class="ui-win__who">میز ۸</span><span class="ui-win__sub">آیس آمریکانو</span><span class="ui-win__st is-done" data-st>سرو شد</span><span class="ui-win__age">۳۴ دقیقه</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="app__pane app__pane--open" data-ui-loop>
-          <div class="ui ui-panel ui-checks" data-ui="checklist">
-            <div class="ui-checks__head">
-              <div class="ui-title">میز ۷ · سفارش ۱۰۴۲</div>
-              <span class="ui-spacer"></span>
-              <div class="ui-meta" data-checks-count>۲ مورد از ۶ سرو شده</div>
-            </div>
-            <div class="ui-checks__bar"><i data-checks-bar style="--k:0.33"></i></div>
-            <ul class="ui-checks__list">
-              <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">فلت وایت · ۹۵٬۰۰۰</span></li>
-              <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">فلت وایت · ۹۵٬۰۰۰</span></li>
-              <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">لاته زعفرانی · ۱۲۰٬۰۰۰</span></li>
-              <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">کیک خرما، بدون گردو · ۱۴۰٬۰۰۰</span></li>
-              <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">لیموناد نعنا · ۱۱۰٬۰۰۰</span></li>
-              <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">ارسال صورتحساب به میز · ۵۶۰٬۰۰۰ تومان</span></li>
-            </ul>
+      <div class="eng__visual" data-rise>
+        <div class="dg" data-diagram><script type="application/json">{"layout":"fanin","alt":"اپ وب، اپ موبایل، صندوق فروش و چاپگر همه از طریق یک هاب محلی کار می‌کنند و هاب با سرور ابری همگام می‌شود.","sources":[{"label":"اپ وب","icon":"ui:monitor","sub":"دفتر"},{"label":"اپ موبایل","icon":"ui:smartphone","sub":"کارکنان"},{"label":"صندوق فروش","icon":"ui:qr-code","sub":"پیشخوان"},{"label":"چاپگر","icon":"ui:printer","sub":"فیش"}],"target":{"label":"هاب محلی","icon":"ui:router"},"then":{"label":"ابر","icon":"ui:cloud","meta":"همگام"}}</script></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="t-label" data-rise>روش کار ما</p>
+        <h2 id="process-h" data-rise>از ایده تا اجرا در چهار گام</h2>
+      </div>
+      <ol class="proc">
+        <li data-rise><b>شناخت</b><span>با کار روزانهٔ کسب‌وکارتان و قوانینی که باید رعایت کند آشنا می‌شویم.</span></li>
+        <li data-rise><b>طراحی</b><span>پیش از نوشتن کد، همهٔ صفحه‌ها را می‌بینید و تأیید می‌کنید.</span></li>
+        <li data-rise><b>ساخت</b><span>نسخه‌های کوچک و آزموده؛ هم‌زمان با رشد محصول از آن استفاده می‌کنید.</span></li>
+        <li data-rise><b>اجرا و پشتیبانی</b><span>نرم‌افزار را میزبانی، پایش و پشتیبان‌گیری می‌کنیم و هر وقت لازم باشد پاسخگوییم.</span></li>
+      </ol>
+      <div class="stack">
+        <p class="stack__label">ابزارهایی که با آن‌ها کار می‌کنیم</p>
+        <div class="marquee">
+          <div class="marquee__row">
+            <span class="tool"><img src="../assets/icons/typescript.svg" alt="" width="26" height="26">TypeScript</span>
+            <span class="tool"><img src="../assets/icons/nestjs.svg" alt="" width="26" height="26">NestJS</span>
+            <span class="tool"><img src="../assets/icons/go.svg" alt="Go" width="69" height="26"></span>
+            <span class="tool"><img src="../assets/icons/postgres.svg" alt="" width="25" height="26">PostgreSQL</span>
+            <span class="tool"><img src="../assets/icons/redis.svg" alt="" width="31" height="26">Redis</span>
+            <span class="tool"><img src="../assets/icons/react.svg" alt="" width="29" height="26">React</span>
+            <span class="tool"><img src="../assets/icons/nextjs.svg" alt="" width="26" height="26">Next.js</span>
+            <span class="tool"><img src="../assets/icons/docker.svg" alt="" width="36" height="26">Docker</span>
+            <span class="tool"><img src="../assets/icons/android.svg" alt="" width="45" height="26">Android</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/typescript.svg" alt="" width="26" height="26">TypeScript</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/nestjs.svg" alt="" width="26" height="26">NestJS</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/go.svg" alt="Go" width="69" height="26"></span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/postgres.svg" alt="" width="25" height="26">PostgreSQL</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/redis.svg" alt="" width="31" height="26">Redis</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/react.svg" alt="" width="29" height="26">React</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/nextjs.svg" alt="" width="26" height="26">Next.js</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/docker.svg" alt="" width="36" height="26">Docker</span>
+            <span class="tool" aria-hidden="true"><img src="../assets/icons/android.svg" alt="" width="45" height="26">Android</span>
           </div>
         </div>
       </div>
     </div>
+
   </section>
 
-  <section class="section ground-inverse" id="offline" aria-labelledby="offline-h">
+  <section class="section" id="product" aria-labelledby="product-h">
     <div class="wrap">
-      <div class="grid grid--middle">
-        <div class="span-5 stack-5">
-          <h2 id="offline-h">اینترنت قطع شد؟ فروش ادامه دارد.</h2>
-          <ol class="steps">
-            <li><div><b>اینترنت قطع می‌شود</b>گوشی‌ها و صندوق همچنان به هاب، دستگاه کوچکی در خود کافه، متصل می‌مانند.</div></li>
-            <li><div><b>هاب کار را ادامه می‌دهد</b>فیش‌های آشپزخانه را چاپ و همهٔ پرداخت‌ها را ثبت می‌کند.</div></li>
-            <li><div><b>اینترنت وصل می‌شود</b>هاب همهٔ سفارش‌ها و صورتحساب‌ها را با سرور ابری همگام می‌کند.</div></li>
-          </ol>
+      <div class="prod" data-rise>
+        <div class="prod__text">
+          <p class="t-label">محصول ما</p>
+          <h2 id="product-h">کافه‌بان</h2>
+          <p>نرم‌افزار مدیریت کافه و رستوران: سفارش‌گیری، پرداخت و صورتحساب مالیاتی در یک جا؛ ساخته‌شده بر پایهٔ همهٔ آنچه گفتیم.</p>
+          <a class="btn btn--primary" href="https://kafeban.ir" rel="noopener">مشاهدهٔ وب‌سایت کافه‌بان<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
         </div>
-        <div class="frame frame--split span-6 start-7">
-          <div class="dg" data-diagram data-dg-still><script type="application/json">{"layout":"fanin","alt":"صندوق، اپ گارسون، منوی QR و چاپگر آشپزخانه همه از طریق هاب کافه کار می‌کنند و هاب سفارش‌ها و صورتحساب‌ها را به سرور ابری کافه‌بان می‌فرستد.","sources":[{"label":"صندوق","icon":"ui:monitor","sub":"ثبت فروش"},{"label":"اپ گارسون","icon":"ui:smartphone","sub":"سفارش‌گیری"},{"label":"منوی QR","icon":"ui:qr-code","sub":"سفارش مهمان"},{"label":"آشپزخانه","icon":"ui:printer","sub":"چاپ فیش"}],"target":{"label":"هاب کافه","icon":"ui:router"},"then":{"label":"ابر کافه‌بان","icon":"ui:cloud","meta":"همگام"}}</script></div>
+        <div class="prod__cards" aria-hidden="true">
+          <div class="prod__card" style="--z:0px;--n:0;top:0;inset-inline-start:0"><small>آشپزخانه · ۱۹:۴۲</small><b>میز ۷ · سفارش ۱۰۴۲</b><div class="row"><span>۲ × فلت وایت</span><span>۱ × کیک خرما</span></div></div>
+          <div class="prod__card" style="--z:40px;--n:1;top:27%;inset-inline-start:22%"><small>صورتحساب · میز ۴</small><big>۶۸۵٬۰۰۰ تومان</big><div class="row"><span>نقد، کارت، آنلاین</span><span class="ok">پرداخت شد</span></div></div>
+          <div class="prod__card" style="--z:80px;--n:2;top:68%;inset-inline-start:4%"><small>صورتحساب مالیاتی ۱۳۸۸</small><div class="row"><span>ارسال ۲۰:۰۵</span><span class="ok">پذیرفته شد</span></div></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section statement" id="approach" data-moment="word-highlight" aria-label="روش کار ما">
-    <div class="wrap">
-      <p class="t-label">روش کار ما</p>
-      <p class="mo-wh__text">هر محصول را برای همان جایی می‌سازیم که در آن به کار می‌رود. کافه‌بان کاملاً فارسی و راست‌به‌چپ است، تاریخ‌هایش شمسی است، مبالغ را تا آخرین ریال دقیق حساب می‌کند و سفارش‌ها را روی سرورهای <strong>داخل ایران</strong> پردازش می‌کند.</p>
     </div>
   </section>
 
   <section class="section" id="questions" aria-labelledby="questions-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="questions-h">پرسش‌های متداول</h2></div>
-      <div class="grid grid--top">
-        <div class="faq span-6">
-          <div class="faq__item"><h3>هگزاگون چه شرکتی است؟</h3><p>هگزاگون یک شرکت نرم‌افزاری است. محصولات خودمان را می‌سازیم و به‌صورت سرویس ابری ارائه می‌کنیم؛ کافه‌بان، برای کافه‌ها و رستوران‌های ایران، نخستین آن‌هاست.</p></div>
-          <div class="faq__item"><h3>کافه‌بان برای چه کسب‌وکارهایی مناسب است؟</h3><p>کافه‌ها و رستوران‌ها؛ از یک صندوق ساده تا چند سالن با گارسون و چاپگر آشپزخانه.</p></div>
-          <div class="faq__item"><h3>آیا کافه‌بان صورتحساب مالیاتی صادر می‌کند؟</h3><p>بله. صورتحساب‌ها خودکار به سامانهٔ مؤدیان ارسال می‌شوند و برای هر مرجوعی، صورتحساب برگشت از فروش صادر می‌شود.</p></div>
-          <div class="faq__item"><h3>کافه‌بان روی چه دستگاه‌هایی کار می‌کند؟</h3><p>روی هر گوشی، تبلت یا رایانه‌ای که مرورگر داشته باشد. اپ کارکنان روی اندروید هم نصب می‌شود.</p></div>
+      <div class="sec-head"><h2 id="questions-h" data-rise>پرسش‌های متداول</h2></div>
+      <div class="faq-grid">
+        <div class="faq">
+          <div class="faq__item" data-rise><h3>هگزاگون چه کاری انجام می‌دهد؟</h3><p>نرم‌افزار طراحی می‌کنیم، می‌سازیم و اجرا می‌کنیم: اپلیکیشن وب و موبایل، سرویس‌های ابری و اتصال به سامانه‌های مورد نیاز.</p></div>
+          <div class="faq__item" data-rise><h3>برای کسب‌وکار من هم نرم‌افزار می‌سازید؟</h3><p>بله. نیازتان را برایمان ایمیل کنید؛ با چند پرسش و یک برنامهٔ اولیه پاسخ می‌دهیم.</p></div>
+          <div class="faq__item" data-rise><h3>از چه فناوری‌هایی استفاده می‌کنید؟</h3><p>TypeScript با NestJS و React، زبان Go برای سرویس‌های پرسرعت، و PostgreSQL و Redis؛ همه در کانتینرهای Docker.</p></div>
         </div>
-        <div class="faq span-6">
-          <div class="faq__item"><h3>اگر اینترنت قطع شود، کافه‌بان چه می‌کند؟</h3><p>گارسون‌ها و صندوق از طریق شبکهٔ داخلی کافه به سفارش‌گیری ادامه می‌دهند. منوی QR فقط قابل مشاهده است و مهمان می‌تواند با یک دکمه گارسون را صدا بزند.</p></div>
-          <div class="faq__item"><h3>اطلاعات کافه‌بان کجا نگهداری می‌شود؟</h3><p>روی سرورهای داخل ایران، با نسخهٔ پشتیبان رمزگذاری‌شدهٔ روزانه.</p></div>
-          <div class="faq__item"><h3>آیا کافه‌بان فیش را به فارسی چاپ می‌کند؟</h3><p>بله، روی چاپگرهای معمول فیش و آشپزخانه.</p></div>
-          <div class="faq__item"><h3>چطور کار با کافه‌بان را شروع کنیم؟</h3><p>به ما ایمیل بزنید. منو، میزها و کارکنان را همراه شما تعریف می‌کنیم و کار با نرم‌افزار را به تیمتان آموزش می‌دهیم.</p></div>
+        <div class="faq">
+          <div class="faq__item" data-rise><h3>رابط فارسی هم طراحی می‌کنید؟</h3><p>بله. صفحه‌ها را راست‌به‌چپ و فارسی‌محور با تاریخ شمسی طراحی می‌کنیم و به انگلیسی هم کار می‌کنیم.</p></div>
+          <div class="faq__item" data-rise><h3>نرم‌افزار کجا میزبانی می‌شود؟</h3><p>روی سرورهایی نزدیک به کاربرانش؛ برای کاربران ایران، روی سرورهای داخل ایران.</p></div>
+          <div class="faq__item" data-rise><h3>کافه‌بان چیست؟</h3><p>محصول خود ما برای کافه‌ها و رستوران‌های ایران. برای آشنایی بیشتر به <a class="link" href="https://kafeban.ir" rel="noopener">kafeban.ir</a> سر بزنید.</p></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="contact" data-rise>
+        <div class="contact__main">
+          <h2 id="contact-h">ایده‌ای برای نرم‌افزار دارید؟</h2>
+          <p>بگویید چه می‌خواهید بسازید. به فارسی یا انگلیسی پاسخ می‌دهیم.</p>
+          <a class="contact__mail" href="mailto:info@hexagon-software.com" dir="ltr">info@<wbr>hexagon-software.com</a>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="mailto:info@hexagon-software.com">ارسال ایمیل<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+            <button class="btn btn--secondary" type="button" data-copy="info@hexagon-software.com" data-done="کپی شد">کپی آدرس ایمیل</button>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+        </div>
+        <dl class="contact__facts">
+          <div><dt><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>زمان پاسخ‌گویی</dt><dd data-assumed>حداکثر یک روز کاری</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>زبان</dt><dd>فارسی و انگلیسی</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/></svg>محصول ما</dt><dd><a href="https://kafeban.ir" rel="noopener">کافه‌بان</a></dd></div>
+        </dl>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer closing" id="contact" aria-labelledby="close-h">
+<footer class="site-foot">
   <div class="wrap">
-    <div class="closing__cta close--type">
-      <div class="section-head">
-        <h2 id="close-h">از کسب‌وکارتان برایمان بگویید</h2>
-        <p>دربارهٔ کافه‌بان سؤالی دارید یا نرم‌افزاری برای کار خودتان می‌خواهید؟ برایمان بنویسید.</p>
+    <div class="site-foot__top">
+      <div class="site-foot__brand">
+        <a class="nav__logo" href="#top"><img src="../brand/hexagon-mark.svg" alt="" width="28" height="28">هگزاگون</a>
+        <p>طراحی، ساخت و اجرای نرم‌افزار کسب‌وکار، با یک تیم.</p>
       </div>
-      <div class="contact">
-        <a class="contact__mail" href="mailto:info@hexagon-software.com" dir="ltr">info@<wbr>hexagon-software.com</a>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="mailto:info@hexagon-software.com">ارسال ایمیل<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-          <button class="btn btn--secondary" type="button" data-copy="info@hexagon-software.com" data-done="کپی شد">کپی آدرس ایمیل</button>
-          <span class="sr-only" aria-live="polite" data-copy-status></span>
-        </div>
-        <dl class="contact__facts">
-          <div><dt><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>زمان پاسخ‌گویی</dt><dd data-assumed>حداکثر یک روز کاری</dd></div>
-          <div><dt><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>زبان</dt><dd>فارسی و انگلیسی</dd></div>
-          <div><dt><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/></svg>محصولات</dt><dd>کافه‌بان</dd></div>
-        </dl>
-      </div>
+      <div><h3>هگزاگون</h3><ul><li><a href="#services">خدمات</a></li><li><a href="#process">روش کار</a></li><li><a href="#questions">پرسش‌های متداول</a></li><li><a href="#contact">تماس با ما</a></li></ul></div>
+      <div><h3>بیشتر</h3><ul><li><a href="https://kafeban.ir" rel="noopener">kafeban.ir</a></li><li><a href="../" hreflang="en" lang="en">English</a></li></ul></div>
     </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-6 stack-4">
-          <a class="nav__logo" href="#top"><img src="../brand/hexagon-mark.svg" alt="" width="28" height="28">هگزاگون</a>
-          <p class="footer__lede">نرم‌افزار ابری برای مدیریت کسب‌وکار.</p>
-        </div>
-        <div class="span-3 start-7 footer__col"><h3>کافه‌بان</h3><ul><li><a href="#kafeban">سالن و سفارش‌ها</a></li><li><a href="#offline">فروش بدون اینترنت</a></li><li><a href="https://kafeban.ir">kafeban.ir</a></li></ul></div>
-        <div class="span-3 footer__col"><h3>هگزاگون</h3><ul><li><a href="#what">خدمات ما</a></li><li><a href="#questions">پرسش‌های متداول</a></li><li><a href="../" hreflang="en" lang="en">English</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <span>© ۱۴۰۵ هگزاگون. همهٔ حقوق محفوظ است.</span>
-        <div class="socials"></div>
-      </div>
+    <div class="site-foot__legal">
+      <span>© ۱۴۰۵ هگزاگون. همهٔ حقوق محفوظ است.</span>
+      <span>نام‌ها و نشان‌های محصولات متعلق به صاحبان آن‌هاست.</span>
     </div>
   </div>
 </footer>
 
-<script>
-document.querySelectorAll('.lang').forEach(a => a.addEventListener('click', e => {
-  if (e.metaKey || e.ctrlKey || e.shiftKey || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  e.preventDefault(); a.classList.add('is-going'); setTimeout(() => { location.href = a.href; }, 340);
-}));
-addEventListener('pageshow', () => document.querySelectorAll('.lang.is-going').forEach(a => a.classList.remove('is-going')));
-document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
-  const st = b.parentElement.querySelector('[data-copy-status]'), t = b.textContent;
-  try { await navigator.clipboard.writeText(b.dataset.copy); } catch { return; }
-  b.textContent = b.dataset.done; if (st) st.textContent = b.dataset.done;
-  setTimeout(() => { b.textContent = t; if (st) st.textContent = ''; }, 1600);
-}));
-</script>
-
+<script type="module" src="../assets/site.js"></script>
 <script type="module" src="../assets/system.js"></script>
 <script type="module" src="../assets/motion/motion.js"></script>
-<script type="module" src="../assets/layout/layout.js"></script>
 <script type="module" src="../assets/diagrams/mount.js"></script>
 </body>
 </html>
